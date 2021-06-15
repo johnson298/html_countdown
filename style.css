@@ -1,0 +1,146 @@
+.set-countdown {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .set-countdown input {
+    margin-right: 50px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 8px;
+    outline: none;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .title-ct {
+    text-align: center;
+    color: #000;
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-top: 0;
+  }
+
+  .cd-result {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .cd-result li .count-value {
+    font-size: 35px;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #0984e3;
+    margin-bottom: 5px;
+  }
+
+  .cd-result li {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+  }
+
+  .cd-result .name {
+    font-weight: bold;
+  }
+
+  body {
+    min-height: 100vh;
+    font-family: sans-serif;
+  }
+
+  .s-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .w-100 {
+    width: 100%;
+  }
+
+  .s-row .s-col {
+    width: 50%;
+    padding: 20px;
+  }
+
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 768px) {
+    .s-row .s-col {
+      width: 100%;
+    }
+  }
+
+  .s-btn {
+    cursor: pointer;
+    background: #0984e3;
+    color: #fff;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }
+
+  .s-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .s-box {
+    padding: 20px 0;
+    border: 1px solid #efeeee;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgb(0 0 0 / 8%);
+    background: #fff;
+}
+  
+  @media (min-width: 576px) {
+    .s-container {
+      max-width: 540px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .s-container {
+      max-width: 720px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .s-container {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .s-container {
+      max-width: 1140px;
+    }
+  }

@@ -6,147 +6,70 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./asset//bootstrap-4.0.0/css/bootstrap.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./asset/jquery.datetimepicker.css">
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Scripts -->
   <script src="./asset/jquery-3.6.0.js"></script>
   <script src="./asset/jquery.datetimepicker.full.min.js"></script>
   <script src="./asset/jquery.countdown.min.js"></script>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css">
-  <link rel="stylesheet" href="./asset/jquery.datetimepicker.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 </head>
 
 <body>
   <div class="wrapper-main">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1 class="text-center title-app my-5">CountDown App</h1>
-        </div>
+    <div class="s-container">
+      <div class="s-row">
+        <h1 class="text-center title-app w-100">CountDown App</h1>
       </div>
-      <div class="row">
-        <div class="col-12 col-md-6 mb-5">
-          <h5 class="title-ct">Count Shopee</h5>
-          <div id="set-count-1" data-countdown="06/15/2021 18:20:00"></div>
-          <div class="set-countdown">
-            <input type="text" name="filter-date" class="filter-date" autocomplete="off" />
-            <button class="btn btn-primary set-count" data-set='set-count-1'>Set time</button>
+      <div class="s-row">
+        <div class="s-col">
+          <div class="s-box">
+            <h5 class="title-ct">Count Shopee</h5>
+            <div id="set-count-1" data-countdown="06/15/2021 18:20:00"></div>
+            <div class="set-countdown">
+              <input type="text" name="filter-date" class="filter-date" autocomplete="off" />
+              <button class="s-btn set-count" data-set='set-count-1'>Set time</button>
+            </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 mb-5">
-          <h5 class="title-ct">Count Tiki</h5>
-          <div id="set-count-2" data-countdown="06/16/2021 18:20:00"></div>
-          <div class="set-countdown">
-            <input type="text" name="filter-date" class="filter-date" autocomplete="off" />
-            <button class="btn btn-primary set-count" data-set='set-count-2'>Set time</button>
+        <div class="s-col">
+          <div class="s-box">
+            <h5 class="title-ct">Count Tiki</h5>
+            <div id="set-count-2" data-countdown="06/16/2021 18:20:00"></div>
+            <div class="set-countdown">
+              <input type="text" name="filter-date" class="filter-date" autocomplete="off" />
+              <button class="s-btn set-count" data-set='set-count-2'>Set time</button>
+            </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 mb-5">
-          <h5 class="title-ct">Count Shopee</h5>
-          <div id="set-count-3" data-countdown="06/17/2021 18:20:00"></div>
-          <div class="set-countdown">
-            <input type="text" name="filter-date" class="filter-date" autocomplete="off" />
-            <button class="btn btn-primary set-count" data-set='set-count-3'>Set time</button>
+        <div class="s-col">
+          <div class="s-box">
+            <h5 class="title-ct">Count Shopee</h5>
+            <div id="set-count-3" data-countdown="06/17/2021 18:20:00"></div>
+            <div class="set-countdown">
+              <input type="text" name="filter-date" class="filter-date" autocomplete="off" />
+              <button class="s-btn set-count" data-set='set-count-3'>Set time</button>
+            </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 mb-5">
-          <h5 class="title-ct">Count Shopee</h5>
-          <div id="set-count-4" data-countdown="06/18/2021 18:20:00"></div>
-          <div class="set-countdown">
-            <input type="text" name="filter-date" class="filter-date" autocomplete="off" />
-            <button class="btn btn-primary set-count" data-set='set-count-4'>Set time</button>
+        <div class="s-col">
+          <div class="s-box">
+            <h5 class="title-ct">Count Shopee</h5>
+            <div id="set-count-4" data-countdown="06/18/2021 18:20:00"></div>
+            <div class="set-countdown">
+              <input type="text" name="filter-date" class="filter-date" autocomplete="off" />
+              <button class="s-btn set-count" data-set='set-count-4'>Set time</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <script>
-
-
-    $(function () {
-
-      $('.set-count').click(function () {
-        const timeCount = $(this).prev('input').val();
-        if (timeCount) {
-          const typeSet = $(this).data('set');
-          const formatDate = moment(timeCount).format('MM/DD/yyyy hh:mm');
-          $(`#${typeSet}`).attr('data-countdown', formatDate);
-          $(`#${typeSet}`).countDown();
-        }
-      })
-
-      $('[data-countdown]').each(function () {
-        var $this = $(this), finalDate = $(this).data('countdown');
-        console.log($this)
-        $this.countdown(finalDate, function (event) {
-          $this.html(event.strftime(`
-          <ul class="cd-result">
-            <li><span class="count-value">%D</span><span class="name">Ngày</span></li>
-            <li><span class="count-value">%H</span><span class="name">Giờ</span></li>
-            <li><span class="count-value">%M</span><span class="name">Phút</span></li>
-            <li><span class="count-value">%S</span><span class="name">Giây</span></li>
-          </ul>
-          `));
-        });
-      });
-    });
-
-    jQuery(document).ready(function () {
-      'use strict';
-      jQuery('.filter-date').datetimepicker();
-    });
-  </script>
-  <style>
-    .set-countdown {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-    }
-
-    .set-countdown input {
-      margin-right: 50px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-    }
-
-    .title-ct {
-      text-align: center;
-      color: #000;
-    }
-
-    .cd-result {
-      display: flex;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .cd-result li .count-value {
-      font-size: 35px;
-      background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-      padding: 15px;
-      border-radius: 10px;
-      font-weight: bold;
-      color: #0984e3;
-    }
-
-    .cd-result li {
-      display: flex;
-      flex-direction: column;
-      margin-right: 10px;
-    }
-
-    .cd-result .name{
-      font-weight: bold;
-    }
-
-    body {
-      min-height: 100vh;
-    }
-  </style>
+  
+  <script src="./source.js"></script>
 </body>
 
 </html>
